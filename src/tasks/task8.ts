@@ -22,17 +22,17 @@ export const wydatek3: WycieczkaSzefaNaKosztFirmy = {
     isSzef: true,
     cel: "Cypr"
 }
+export type PoprawWydatki<T extends Wydatek = Wydatek> = (wydatek: T) => T;
 
-export const poprawWydatki: PoprawWydatki = (wydatek: any) => {
+export const poprawWydatki = <T extends Wydatek>(wydatek: T): T => {
     return {
         ...wydatek,
         kwota: wydatek.kwota * 1.23
-    }
+    } as T;
 }
 
 //# ---
 
-export type PoprawWydatki = any;
 
 poprawWydatki(wydatek1);
 poprawWydatki(wydatek2);

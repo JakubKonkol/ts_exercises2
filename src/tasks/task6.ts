@@ -25,4 +25,9 @@ export const WynikKontroli = () => {
 
 //# ---
 
-export type TypKontroliZUrzędu = any;
+export type TypKontroliZUrzędu = {
+    zdane: boolean,
+    isPies: boolean,
+    firmaDoZamkniecia: boolean,
+    czySzefMaZnajomychWZarządzie: boolean,
+};

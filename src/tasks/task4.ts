@@ -6,13 +6,14 @@
  * Stwórz typ `ZaksięgujKreatywnie` będący funkcją,
  * która przyjmuje dowolną liczbę argumentów typu `number` i zwraca tablicę obiektów typu `KreatywnyWydatek`.
  */
+import {Kontrola} from "./task1.js";
 
 export type KreatywnyWydatek = {
     wydatek: number;
     opis: string;
 }
-export type KontrolujKreatywnie = any;
-export type ZaksięgujKreatywnie = any;
+export type KontrolujKreatywnie = (kontrola: Kontrola) => Kontrola;
+export type ZaksięgujKreatywnie = (...wydatki: number[]) => KreatywnyWydatek[];
 
 export const kreatywneWydatki: ZaksięgujKreatywnie = (...wydatki: any) => {
     const listaWydatków: any = [];
